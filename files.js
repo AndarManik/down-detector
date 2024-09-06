@@ -1,6 +1,5 @@
 const fs = require("fs");
 const History = require("./dumb_handler");
-const Fuse = require("fuse.js");
 
 const models = {
   "GPT-4o": new History(),
@@ -11,7 +10,9 @@ const models = {
 
 const requestedModels = new Set();
 
-const modelPath = "files/model_data.json";
+const modelPath = "/var/data/model_data.json";
+const requestedPath = "/var/data/requested_data.json";
+
 fs.readFile(modelPath, "utf8", (err, data) => {
   if (err) {
     updateModels();
@@ -23,7 +24,6 @@ fs.readFile(modelPath, "utf8", (err, data) => {
   }
 });
 
-const requestedPath = "files/requested_data.json";
 fs.readFile(requestedPath, "utf8", (err, data) => {
   if (err) {
     updateModels();
