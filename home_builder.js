@@ -173,10 +173,10 @@ function buildHome() {
           <a href="https://dumbdetector.com/">Dumb Detector</a>
         </div>
         <div id="content">
-          <h1>LLM nerf monitor</h1>
+          <h1>LLM nerf monitoring</h1>
           <div style="display: flex;">
             <div> 
-        <input id="searchbar" type="text" placeholder="Search..." />
+        <input id="searchbar" type="text" placeholder="Which model got dumber?" />
         <div id="search-recommendation" style="position: absolute;">
         </div>
       </div>
