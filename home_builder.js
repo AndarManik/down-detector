@@ -81,7 +81,7 @@ function buildHome() {
             border-bottom: 1px solid #c5c9c8;
             width: 20rem;
             height: 2.5rem;
-
+            font-size: 1.25rem;
             -webkit-appearance: none;
           }
     
@@ -95,7 +95,7 @@ function buildHome() {
           #search {
             width: 5rem;
             margin-left: 1rem;
-            font-size: 0.75rem;
+            font-size: 1.25rem;
             border-radius: 2px;
             height: 2.5rem;
             padding-left: 0.5rem;
@@ -133,7 +133,7 @@ function buildHome() {
           }
     
           .searchResult {
-            font-size: 1rem;
+            font-size: 1.25rem;
             font-weight: 500;
           }
     
