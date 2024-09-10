@@ -80,6 +80,8 @@ function buildHome() {
             border: 0px solid black;
             border-bottom: 1px solid #c5c9c8;
             width: 20rem;
+            height: 2.5rem;
+
             -webkit-appearance: none;
           }
     
