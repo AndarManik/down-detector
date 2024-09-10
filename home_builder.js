@@ -187,7 +187,7 @@ function buildHome() {
           <a href="https://dumbdetector.com/">Dumb Detector</a>
         </div>
         <div id="content">
-          <h1>LLM nerf monitoring</h1>
+          <h1>Monitor nerfs to language models</h1>
           <div style="display: flex;">
             <div> 
         <input id="searchbar" type="text" placeholder="Which model got dumber?" />
