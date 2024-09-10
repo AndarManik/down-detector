@@ -165,6 +165,20 @@ function buildHome() {
               padding-left: 1rem;
               padding-right: 1rem;
             }
+
+            #search {
+              height: 1.50rem;
+              font-size: 1rem;
+            }
+
+            #searchBar {
+              height: 1.50rem;
+              font-size: 1rem;
+            }
+
+            #searchResult {
+              font-size: 1rem;
+            }
           }
         </style>
       </head>
