@@ -35,11 +35,11 @@ app.get("/:model", function (req, res) {
   else res.send(buildPage(req.params.model, history.getGraphData(30)));
 });
 
-app.get("/:model/:ip", function (req, res) {
+app.get("/:model/increment", function (req, res) {
   const history = models[req.params.model];
   if (!history) res.send("No Page");
   else {
-    history.increment(req.params.ip);
+    history.increment(req.ip);
     res.send(JSON.stringify(history.getGraphData(30)));
   }
 });

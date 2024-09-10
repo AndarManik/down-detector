@@ -303,17 +303,14 @@ function buildPage(model, data) {
 
     document.getElementById("dumbbutton").addEventListener("click", function() {
         document.getElementById("received").style.display = "block";
-        fetch('https://api.ipify.org?format=json')
+
+        const model = window.location.pathname.split('/')[1];
+        fetch("/"+ model + "/increment")
         .then(response => response.json())
         .then(data => {
-            const model = window.location.pathname.split('/')[1];
-            fetch("/"+ model + "/" + encodeURIComponent(data.ip))
-            .then(response => response.json())
-            .then(data => {
-              myChart.data.labels = data[0];
-              myChart.data.datasets[0].data = data[1];
-              myChart.update();
-            });
+          myChart.data.labels = data[0];
+          myChart.data.datasets[0].data = data[1];
+          myChart.update();
         });
     });
 
