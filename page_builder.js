@@ -312,6 +312,7 @@ function buildPage(model, data) {
             .then(data => {
               myChart.data.labels = data[0];
               myChart.data.datasets[0].data = data[1];
+              myChart.update();
             });
         });
     });

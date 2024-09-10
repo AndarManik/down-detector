@@ -1,5 +1,5 @@
 function buildHome() {
-    return `<!DOCTYPE html>
+  return `<!DOCTYPE html>
     <!-- saved from url=(0025)https://dumbdetector.com/ -->
     <html lang="en">
       <link type="text/css" rel="stylesheet" id="dark-mode-custom-link" /><link
@@ -173,8 +173,11 @@ function buildHome() {
         <div id="content">
           <h1>Monitor LLM nerfs in real-time</h1>
           <div style="display: flex;">
-            <input id="searchbar" type="text" placeholder="Search..." />
-            <div id="search-recommendation"></div>
+            <div> 
+        <input id="searchbar" type="text" placeholder="Search..." />
+        <div id="search-recommendation" style="position: absolute;">
+        </div>
+      </div>
             <button id="search">Search</button>
           </div>
         </div>
@@ -236,6 +239,6 @@ function buildHome() {
       </body>
     </html>
     `;
-  }
+}
 
-  module.exports = buildHome;
+module.exports = buildHome;
