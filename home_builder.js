@@ -275,47 +275,13 @@ function buildHome(models, datas) {
     <body>
       <div id="header">
         <a href="">Dumb Detector</a>
-        <div> 
-          <input id="searchbar" type="text" placeholder="Search..." />
-          <div id="search-recommendation" style="position: absolute;">
-          </div>
-        </div>
+        
         <button id="search">Search</button>
       </div>
       <div id="content">
-        <div id="graph">
-          <canvas id="myChart"></canvas>
-        </div>      
-        <div id="model">
-          <div style="width: 100%; text-align: center;">
-            <div style="display: flex; justify-content: center">
-              <h1>${models[0]}</h1>
-            </div>
-            <div style="display: flex; justify-content: center">
-              <button id="dumbbutton">Is it dumb?</button>
-            </div>
-            <div style="display: flex; justify-content: center">
-              <p id="received" style="position: absolute; display: none; margin-top: 1rem; color: #5ea797;"> Received </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div id="content2">
-        <div id="graph2">
-          <canvas id="myChart2"></canvas>
-        </div>      
-        <div id="model2">
-          <div style="width: 100%; text-align: center;">
-            <div style="display: flex; justify-content: center">
-              <h1>${models[1]}</h1>
-            </div>
-            <div style="display: flex; justify-content: center">
-              <button id="dumbbutton2">Is it dumb?</button>
-            </div>
-            <div style="display: flex; justify-content: center">
-              <p id="received2" style="position: absolute; display: none; margin-top: 1rem; color: #5ea797;"> Received </p>
-            </div>
+       <div> 
+          <input id="searchbar" type="text" placeholder="Search..." />
+          <div id="search-recommendation" style="position: absolute;">
           </div>
         </div>
       </div>
@@ -323,120 +289,6 @@ function buildHome(models, datas) {
 
     </body>
     <script>
-      var ctx = document.getElementById("myChart").getContext("2d");
-      var myChart = new Chart(ctx, {
-        type: "line",
-        data: {
-          labels: ${JSON.stringify(datas[0][0])},
-          datasets: [
-            {
-              label: "Detections",
-              data: ${JSON.stringify(datas[0][1])},
-              backgroundColor: ["#b3dcd0"],
-              borderColor: ["#5ea797"],
-              borderWidth: 2,
-              pointRadius: 2,
-              fill: true,
-            },
-          ],
-        },
-        options: {
-          border: {
-            display: false,
-          },
-          scales: {
-            x: {
-              grid: {
-                display: false,
-              },
-            },
-            y: {
-              grid: {
-                display: true,
-              },
-              border:{
-                  display:false,
-              },
-              beginAtZero: true,
-              ticks: {
-                precision: 0
-            }
-            },
-          },
-          elements: {
-            line: {
-              tension: 0.4,
-            },
-          },
-          plugins: {
-            legend: {
-              labels: {
-                font: {
-                  family: "Poppins",
-                },
-              },
-            },
-          },
-        },
-      });
-
-      var ctx = document.getElementById("myChart2").getContext("2d");
-      var myChart = new Chart(ctx, {
-        type: "line",
-        data: {
-          labels: ${JSON.stringify(datas[1][0])},
-          datasets: [
-            {
-              label: "Detections",
-              data: ${JSON.stringify(datas[1][1])},
-              backgroundColor: ["#b3dcd0"],
-              borderColor: ["#5ea797"],
-              borderWidth: 2,
-              pointRadius: 2,
-              fill: true,
-            },
-          ],
-        },
-        options: {
-          border: {
-            display: false,
-          },
-          scales: {
-            x: {
-              grid: {
-                display: false,
-              },
-            },
-            y: {
-              grid: {
-                display: true,
-              },
-              border:{
-                  display:false,
-              },
-              beginAtZero: true,
-              ticks: {
-                precision: 0
-            }
-            },
-          },
-          elements: {
-            line: {
-              tension: 0.4,
-            },
-          },
-          plugins: {
-            legend: {
-              labels: {
-                font: {
-                  family: "Poppins",
-                },
-              },
-            },
-          },
-        },
-      });
-  
       document.getElementById("search").addEventListener("click", function() {
           window.location = document.querySelector("#searchbar").value;
       });
