@@ -299,24 +299,6 @@ function buildHome(models, datas) {
       }
       });
   
-      document.getElementById("dumbbutton").addEventListener("click", function() {
-          document.getElementById("received").style.display = "block";
-          fetch('https://api.ipify.org?format=json')
-          .then(response => response.json())
-          .then(data => {
-              fetch("/${models[0]}/" + encodeURIComponent(data.ip));
-          });
-      });
-
-      document.getElementById("dumbbutton2").addEventListener("click", function() {
-          document.getElementById("received2").style.display = "block";
-          fetch('https://api.ipify.org?format=json')
-          .then(response => response.json())
-          .then(data => {
-              fetch("/${models[1]}/" + encodeURIComponent(data.ip));
-          });
-      });
-  
       document.getElementById("searchbar").addEventListener("input", function() {
       const query = this.value;
       fetch('/fuzzy/search/' + query)
