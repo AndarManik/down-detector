@@ -6,33 +6,27 @@ const buildPage = require("./page_builder");
 const buildHome = require("./home_builder");
 const { models, requestedModels } = require("./files");
 const buildNoPage = require("./no_page_builder");
-const { buildLoginPage, getRotatingAdminUrl, buildAdminPage } = require("./admin_builder");
+const {
+  buildLoginPage,
+  getRotatingAdminUrl,
+  buildAdminPage,
+} = require("./admin_builder");
 const History = require("./dumb_handler");
 app.set("view engine", "ejs");
 
 // Fuse.js configuration
-let fuse = new Fuse(Object.keys(models), {
-  includeScore: true, // Include the scoring of matches
-  isCaseSensitive: false, // Case insensitive
-  findAllMatches: true, // Include matches of all lengths
-  threshold: 1, // Tolerance level for mismatches
-});
-
+let fuse;
+setTimeout(() => {
+  fuse = new Fuse(Object.keys(models), {
+    includeScore: true, // Include the scoring of matches
+    isCaseSensitive: false, // Case insensitive
+    findAllMatches: true, // Include matches of all lengths
+    threshold: 1, // Tolerance level for mismatches
+  });
+}, 500);
 
 app.get("/", function (req, res) {
-  const num1 = Math.floor(Math.random() * Object.keys(models).length);
-  let num2 = Math.floor(Math.random() * Object.keys(models).length);
-  while (num1 === num2) {
-    num2 = Math.floor(Math.random() * Object.keys(models).length);
-  }
-  const model1 = Object.keys(models)[num1];
-  const model2 = Object.keys(models)[num2];
-  res.send(
-    buildHome(
-      [model1, model2],
-      [models[model1].getGraphData(30), models[model2].getGraphData(30)]
-    )
-  );
+  res.send(buildHome());
 });
 
 app.get("/:model", function (req, res) {
@@ -46,7 +40,7 @@ app.get("/:model/:ip", function (req, res) {
   if (!history) res.send("No Page");
   else {
     history.increment(req.params.ip);
-    res.send("success");
+    res.send(JSON.stringify(history.getGraphData(30)));
   }
 });
 
@@ -106,7 +100,7 @@ app.get("/new/model/:model/:rotating", function (req, res) {
 
 app.get("/remove/model/:model/:rotating", function (req, res) {
   if (req.params.rotating == getRotatingAdminUrl()) {
-    delete models[req.params.model]
+    delete models[req.params.model];
     res.send(buildAdminPage());
   } else {
     res.send("failed");

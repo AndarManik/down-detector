@@ -125,12 +125,14 @@ function buildPage(model, data) {
         right: auto;
         border: 0px solid black;
         border-bottom: 1px solid #c5c9c8;
+        -webkit-appearance: none;
       }
 
       #searchbar:focus {
         outline: none;
         border: 0px solid black;
         border-bottom: 1px solid #c5c9c8;
+        -webkit-appearance: none;
       }
 
       #search {
@@ -305,7 +307,12 @@ function buildPage(model, data) {
         .then(response => response.json())
         .then(data => {
             const model = window.location.pathname.split('/')[1];
-            fetch("/"+ model + "/" + encodeURIComponent(data.ip));
+            fetch("/"+ model + "/" + encodeURIComponent(data.ip))
+            .then(response => response.json())
+            .then(data => {
+              myChart.data.labels = data[0];
+              myChart.data.datasets[0].data = data[1];
+            });
         });
     });
 
