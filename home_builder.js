@@ -47,7 +47,7 @@ function buildHome() {
             font-size: 1.5rem;
             font-weight: 600;
             width: calc(100% - 12rem);
-            max-width: 50rem;
+            max-width: 40rem;
           }
     
           #header :nth-child(1) {
@@ -62,8 +62,7 @@ function buildHome() {
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: center;
-            max-width: 50rem;
+            max-width: 40rem;
           }
     
           a {
@@ -79,7 +78,7 @@ function buildHome() {
             right: auto;
             border: 0px solid black;
             border-bottom: 1px solid #c5c9c8;
-            width: 20rem;
+            width: 100%;
             height: 2.5rem;
             font-size: 1.25rem;
             -webkit-appearance: none;
@@ -167,17 +166,17 @@ function buildHome() {
             }
 
             #search {
-              width: 3rem;
+              
               font-size: 1rem;
             }
 
-            #searchBar {
-              width: 8rem;
-              font-size: 1rem;
+            #searchbar {
+                width: 100%;
+                font-size: 1rem;
             }
 
-            #searchResult {
-              font-size: 1rem;
+            .searchResult {
+                font-size: 1rem;
             }
           }
         </style>
@@ -188,8 +187,8 @@ function buildHome() {
         </div>
         <div id="content">
           <h1>Monitor nerfs to language models</h1>
-          <div style="display: flex;">
-            <div> 
+          <div style="display: flex;width: 100%;">
+            <div style="width: 100%;"> 
         <input id="searchbar" type="text" placeholder="Which model got dumber?" />
         <div id="search-recommendation" style="position: absolute;">
         </div>
