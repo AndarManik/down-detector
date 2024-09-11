@@ -88,6 +88,7 @@ class Sample {
   increment(ip) {
     if (this.ips.includes(ip)) return;
     console.log("increment");
+    console.log(ip);
     this.ips.push(ip);
     this.count++;
   }
