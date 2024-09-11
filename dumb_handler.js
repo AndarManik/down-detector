@@ -31,16 +31,16 @@ class History {
     this.history = this.history.reverse();
   }
   increment(ip) {
+    this.current.increment(ip);
+  }
+  checkDate() {
     const day = new Date().getUTCDate();
     const month = new Date().getUTCMonth();
-
 
     if (day !== this.current.day || month !== this.current.month) {
       this.history.push(this.current);
       this.current = new Sample(day, month);
     }
-
-    this.current.increment(ip);
   }
   getGraphData(days) {
     const months = [

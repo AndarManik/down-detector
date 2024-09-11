@@ -47,8 +47,10 @@ function updateModels() {
     if (err) throw err;
     console.log("The file has been saved!");
   });
+
+  Object.values(models).forEach(model => model.checkDate());
 }
 
-setInterval(updateModels, 1000 * 60);
+setInterval(updateModels, 1000 * 60); // every minute
 
 module.exports = { models, requestedModels };
