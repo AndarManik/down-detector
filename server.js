@@ -39,7 +39,9 @@ app.get("/:model/increment", function (req, res) {
   const history = models[req.params.model];
   if (!history) res.send("No Page");
   else {
-    history.increment(req.ip);
+    history.increment(
+      req.headers["x-forwarded-for"] || req.socket.remoteAddress
+    );
     res.send(JSON.stringify(history.getGraphData(30)));
   }
 });
