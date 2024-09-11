@@ -167,12 +167,12 @@ function buildHome() {
             }
 
             #search {
-              width: 3.5rem;
+              width: 3rem;
               font-size: 1rem;
             }
 
             #searchBar {
-              width: 12.5rem;
+              width: 8rem;
               font-size: 1rem;
             }
 
