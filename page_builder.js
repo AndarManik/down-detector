@@ -222,7 +222,7 @@ function buildPage(model, data) {
             <h1>${model}</h1>
           </div>
           <div style="display: flex; justify-content: center">
-            <button id="dumbbutton">Is it dumb?</button>
+            <button id="dumbbutton">I think it's dumber</button>
           </div>
           <div style="display: flex; justify-content: center">
             <p id="received" style="position: absolute; display: none; margin-top: 1rem; color: #5ea797;"> Received </p>
