@@ -241,7 +241,7 @@ function buildPage(model, data) {
         labels: ${JSON.stringify(data[0])},
         datasets: [
           {
-            label: "Users who thought ${model} got dumber",
+            label: "Users experiencing dumbness",
             data: ${JSON.stringify(data[1])},
             backgroundColor: ["#b3dcd0"],
             borderColor: ["#5ea797"],
