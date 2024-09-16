@@ -49,7 +49,7 @@ function buildPage(model, data) {
       }
 
       #content {
-        height: 21rem;
+        height: calc(75svh - 6rem);
         padding-left: 6rem;
         padding-right: 6rem;
         display: flex;
