@@ -32,7 +32,7 @@ app.get("/", function (req, res) {
 app.get("/:model", function (req, res) {
   const history = models[req.params.model];
   if (!history) res.send(buildNoPage(req.params.model));
-  else res.send(buildPage(req.params.model, history.getGraphData(30)));
+  else res.send(buildPage(req.params.model, history.getGraphData(91)));
 });
 
 app.get("/:model/increment", function (req, res) {
@@ -44,7 +44,7 @@ app.get("/:model/increment", function (req, res) {
         ? req.headers["x-forwarded-for"].split(",")[0]
         : req.socket.remoteAddress
     );
-    res.send(JSON.stringify(history.getGraphData(30)));
+    res.send(JSON.stringify(history.getGraphData(91)));
   }
 });
 
